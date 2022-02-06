@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+</script><script id="vertex-shader" type="x-shader/x-vertex">
+
+ attribute vec4 vPosition;
+ uniform vec2 pengePosition;
+ uniform bool isPenge;
+
+ void
+ main()
+ {
+     gl_Position = vPosition;
+     gl_Position[0]/=1000.0/600.0;
+     if (isPenge){
+       gl_Position[0]+=pengePosition[0];
+       gl_Position[1]+=pengePosition[1];
+     }
+
+ }
+ </script>
+  <script id="fragment-shader" type="x-shader/x-fragment">
+  precision mediump float;
+  varying vec4 fColor;
+  uniform vec4 litur;
+
+ void
+ main()
+ {
+     gl_FragColor = litur;
+ }
+ </script>
+
+ <script type="text/javascript" src="./webgl-utils.js"></script>
+ <script type="text/javascript" src="./initShaders.js"></script>
+ <script type="text/javascript" src="./MV.js"></script>
+ <script type="text/javascript" src="./mario.js"></script>
+
+<body>
+ <P id="stigafjoldi">
+   Stig:
+ </P>
+<canvas id="gl-canvas" width="1000" height="600">
+</body>
+</html>
