@@ -37,7 +37,7 @@ window.onload = function init() {
         vec2( -0.1, -0.74 ),
         vec2(  0.1, -0.82 )
     ];
-    verticesStart = vertices.slice();
+    verticesStart = JSON.parse(JSON.stringify(vertices));
     pengeVertices = [
        vec2( -0.04, -0.04 ),
        vec2( -0.04, 0.04 ),
@@ -67,7 +67,7 @@ window.onload = function init() {
                 break;
             case 38:	// hopp �r
                 hopp = true;
-                ymove = 0.005;
+                ymove = 0.02;
                 break;
             default:
                 xmove = 0.0;
